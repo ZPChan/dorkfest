@@ -18,3 +18,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "wwwDorkfest.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet wwwDorkfest.dll
